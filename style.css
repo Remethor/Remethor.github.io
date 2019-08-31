@@ -1,10 +1,10 @@
 @font-face {
 	font-family: "OldLondon";
-	src: url("fonts/OldLondon.ttf");
+	src: url("https://remethor.github.io/fonts/OldLondon.ttf");
 }
 @font-face {
 	font-family: "Cardinal";
-	src: url("fonts/Cardinal.ttf");
+	src: url("https://remethor.github.io/fonts/Cardinal.ttf");
 }
 body
 {
@@ -16,7 +16,7 @@ body
 }
 #container
 {
-	background: url("files/img/wood.jpg") no-repeat center center fixed;
+	background: url("https://remethor.github.io/files/img/wood.jpg") no-repeat center center fixed;
 	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
@@ -31,7 +31,7 @@ body
 {
 	width: 72rem;
 	padding: 4rem;
-	background: url("files/img/paper.png") repeat-y center center;
+	background: url("https://remethor.github.io/files/img/paper.png") repeat-y center center;
 	background-size: cover;
 	margin-left: auto;
 	margin-right: auto;
@@ -40,7 +40,7 @@ body
 {
 	width: 35em;
 	padding: 2.3em;
-	background: url("files/img/scroll.png") no-repeat;
+	background: url("https://remethor.github.io/files/img/scroll.png") no-repeat;
 	background-origin: border-box;
 	background-position: center;
 	background-size: contain;
