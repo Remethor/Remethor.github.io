@@ -1,5 +1,8 @@
-{
-	"version":2,
-	"scripts":["startup.js"],
-	"start":"startup.js"
+{ 
+   "version":2,
+   "scripts":[ 
+      "startup.js"
+   ],
+   "mods":[],
+   "start":"startup.js"
 }
