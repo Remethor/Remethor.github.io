@@ -1,0 +1,5 @@
+{
+	"version":0.2,
+	"scripts":["startup.js"],
+	"start":"startup.js"
+}
