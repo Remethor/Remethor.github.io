@@ -9,7 +9,7 @@
   <body>
     <h1>[R] Remethor</h1>
     Witaj w świecie remethor!<br />
-    Wersja launchera: <script>document.write(version)</script><br /><br />
-    <input type="button" value="Zagraj!" onclick="startMinecraft();">
+    Wersja launchera: <script>document.write(remote.getGlobal('sharedObj').version)</script><br /><br />
+    <input type="button" value="Zagraj!" onclick="remote.getGlobal('sharedObj').startMinecraft();">
   </body>
 </html>
