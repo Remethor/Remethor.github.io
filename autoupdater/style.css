@@ -1,0 +1,22 @@
+body
+{
+	background-color: #222831;
+	text-shadow: 1px 1px #29a19c;
+	font-family: Verdana;
+	color: #a3f7bf;
+}
+h1
+{
+	font-weight: 300;
+}
+input[type="button"]
+{
+	width: 150px;
+	height: 50px;
+	font-size: 30px;
+	border-radius: 10px;
+}
+#version
+{
+	color: white;
+}
