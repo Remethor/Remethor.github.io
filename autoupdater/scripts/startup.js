@@ -1,5 +1,7 @@
 console.log("Startup!");
-document.getElementById("version").innerHTML = "0.1.1v";
-let startMinecraft = function () {
-	exec('start '+process.cwd()+'/minecraft/startMinecraft.bat');
+global.sharedObj = {version: null, startMinecraft: null};
+global.sharedObj.version = "0.0.1r";
+global.sharedObj.startMinecraft = function () {
+	exec('start '+process.cwd()+'/startMinecraft.bat');
+	process.exit(0);
 }
