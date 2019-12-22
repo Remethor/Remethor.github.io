@@ -1,5 +1,5 @@
 {
-   "version":7,
+   "version":8,
    "scripts":[
       "startup.js"
    ],
@@ -14,7 +14,7 @@
 "CTM-MC1.12.2-0.3.3.22.jar",
 "CustomLoadingScreen-1.12.2-1.4.1.jar",
 "CustomMainMenu-MC1.12.2-2.0.9.jar",
-"CustomMobSpawner+3.10.1.jar",
+"CustomMobSpawner-3.11.4.jar",
 "CustomNPCs_1.12.2(30Jan19).jar",
 "Davincis-Vessels-Mod-1.12.2.jar",
 "drpcore-1.12.2-0.4.7.jar",
