@@ -1,15 +1,16 @@
 console.log("Startup!");
 global.sharedObj = {version: null, startMinecraft: null, resetConfig: null, redownloadMods: null};
-global.sharedObj.version = "0.0.1r";
+global.sharedObj.version = "0.1.2r";
 global.sharedObj.resetConfig = function () {
 	deleteFolderRecursive("./minecraft/.minecraft/config/Embassy");
-	deleteFolderRecursive("./minecraft/.minecraft/config/betterhud.cfg");
+	fs.unlinkSync("./minecraft/.minecraft/config/betterhud.cfg");
+	console.log("Pulling config");
 	downloadFile('https://remethor.github.io/autoupdater/config/betterhud.cfg', './minecraft/.minecraft/config/betterhud.cfg', function(){
-		console.log("done");
+		console.log("Done!");
 	});
 }
+global.sharedObj.resetConfig();
 global.sharedObj.startMinecraft = function () {
-	global.sharedObj.resetConfig();
 	exec('start '+process.cwd()+'/startMinecraft.bat');
 	process.exit(0);
 }
