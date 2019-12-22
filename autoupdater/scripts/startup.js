@@ -16,5 +16,4 @@ global.sharedObj.redownloadMods = function () {
     for(let i=0;i<modsArray.length;i++){
     	downloadFile('https://remethor.github.io/autoupdater/mods/'+modsArray[i], './minecraft/.minecraft/mods/'+modsArray[i]);
     }
-    alert("Proszę chwilę zaczekać!");
 }
