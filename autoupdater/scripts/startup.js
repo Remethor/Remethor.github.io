@@ -3,6 +3,7 @@ global.sharedObj = {version: null, startMinecraft: null, resetConfig: null, redo
 global.sharedObj.version = "0.0.1r";
 global.sharedObj.resetConfig = function () {
 	deleteFolderRecursive("./minecraft/.minecraft/config/Embassy");
+	downloadNewFile('./minecraft/.minecraft/config/betterhud.cfg', './tempConfig.cfg', 'https://remethor.github.io/autoupdater/config/betterhud.cfg', function(){});
 }
 global.sharedObj.startMinecraft = function () {
 	global.sharedObj.resetConfig();
