@@ -1,5 +1,5 @@
 {
-   "version":19,
+   "version":20,
    "scripts":[
       "startup.js"
    ],
@@ -55,5 +55,16 @@
 		"worldedit-forge-mc1.12-6.1.8-dist.jar",
 		"[1.12.2] Medieval Weapons -1.3.jar"
    ],
+   "javaLibraries":["jinput-dx8.dll",
+	"jinput-dx8_64.dll",
+	"jinput-raw.dll",
+	"jinput-raw_64.dll",
+	"jinput-wintab.dll",
+	"lwjgl.dll",
+	"lwjgl64.dll",
+	"OpenAL32.dll",
+	"OpenAL64.dll",
+	"SAPIWrapper_x64.dll",
+	"SAPIWrapper_x86.dll"],
    "start":"startup.js"
 }
