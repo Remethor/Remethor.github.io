@@ -1,11 +1,13 @@
 console.log('Startup!');
+
+let contents = win.webContents;
+
 win.removeMenu();
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 async function waitForDownload() {
-	let contents = win.webContents;
 	await sleep(100);
 	win.loadFile(process.cwd()+'/index.html');
 	contents.executeJavaScript('document.getElementById("Zagraj").disabled = true;');
@@ -14,7 +16,7 @@ async function waitForDownload() {
 	win.webContents.executeJavaScript('document.getElementById("Zagraj").disabled = true;');
 	await sleep(300);
 	contents.reload();
-	win.webContents.executeJavaScript('document.getElementById("Zagraj").disabled = true;');
+	contents.executeJavaScript('document.getElementById("Zagraj").disabled = true;');
 	await sleep(5000);
 	contents.executeJavaScript('document.getElementById("Zagraj").disabled = false;');
 }
@@ -31,21 +33,21 @@ global.sharedObj.resetConfig = function () {
 	});
 	}
 }
-global.sharedObj.startMinecraft = function () {
-	let nick = 'FColor04';
+global.sharedObj.startMinecraft = function (nick) {
 	let uuid = '71f3f1c7398201f2375c6775db3514a9';
 	let maxMem = 6;
 	let minMem = 2;
-	if(fs.existsSync('./nick.txt')){
+	if(nick != null && fs.existsSync('./nick.txt')){
 		fs.unlinkSync('./nick.txt');
 	}
-	exec('echo '+nick+' >> nick.txt');
+	if(nick != null)
+		exec('echo '+nick+' >> nick.txt');
 	exec('start '+process.cwd()+'/startMinecraft.bat');
 	process.exit(0);
 }
 global.sharedObj.redownloadIndex = function () {
-	if(fs.existsSync('./index2.html')){
-		fs.unlinkSync('./index2.html');
+	if(fs.existsSync('./index.html')){
+		fs.unlinkSync('./index.html');
 	}
 	if(fs.existsSync('./style.css')){
 		fs.unlinkSync('./style.css');

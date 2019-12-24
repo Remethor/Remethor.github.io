@@ -14,7 +14,7 @@
     <script>document.write(remote.getGlobal('sharedObj').version)</script><br /><br />
     <div id="bars"><input id="username" class="nicknameField" placeholder="Nick"></div><br />
     <div id="buttons">
-      <input id="Zagraj" type="button" value="Zagraj" onclick="remote.getGlobal('sharedObj').startMinecraft();">
+      <input id="Zagraj" type="button" value="Zagraj" onclick='remote.getGlobal("sharedObj").startMinecraft(document.getElementById("username").value);'>
       <input type="button" value='Napraw' onclick="remote.getGlobal('sharedObj').redownloadMods();">
     </div>
   </body>
