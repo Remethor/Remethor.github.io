@@ -7,8 +7,9 @@ function sleep(ms) {
 async function waitForDownload() {
 	let contents = win.webContents;
 	await sleep(100);
-	win.webContents.session.clearCache(function(){
-		win.loadFile('./index.html');
+	while(!fs.existsSync('./index2.html')){
+		await sleep(100);
+		win.loadFile('./index2.html');
 	}
 	contents.executeJavaScript('document.getElementById("Zagraj").disabled = true;');
 	await sleep(300);
@@ -55,7 +56,7 @@ global.sharedObj.redownloadIndex = function () {
 	if(fs.existsSync('./logo.png')){
 		fs.unlinkSync('./logo.png');
 	}
-	downloadFile('https://remethor.github.io/autoupdater/index.html', './index.html');
+	downloadFile('https://remethor.github.io/autoupdater/index.html', './index2.html');
 	downloadFile('https://remethor.github.io/autoupdater/style.css', './style.css');
 	downloadFile('https://remethor.github.io/autoupdater/logo.png', './logo.png');
 	waitForDownload();
