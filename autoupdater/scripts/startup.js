@@ -7,9 +7,7 @@ function sleep(ms) {
 async function waitForDownload() {
 	let contents = win.webContents;
 	await sleep(100);
-	while(!fs.existsSync('./index.html')){
-		await sleep(100);
-		const ses = win.webContents.session.clearCache(function() {});
+	win.webContents.session.clearCache(function(){
 		win.loadFile('./index.html');
 	}
 	contents.executeJavaScript('document.getElementById("Zagraj").disabled = true;');
