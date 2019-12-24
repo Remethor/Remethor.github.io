@@ -6,6 +6,7 @@ function sleep(ms) {
 }
 async function waitForDownload() {
 	let contents = win.webContents;
+	contents.executeJavaScript('document.getElementById("Zagraj").disabled = true;');
 	await sleep(300);
 	contents.reload();
 	win.webContents.executeJavaScript('document.getElementById("Zagraj").disabled = true;');
@@ -41,7 +42,6 @@ global.sharedObj.startMinecraft = function () {
 	process.exit(0);
 }
 global.sharedObj.redownloadIndex = function () {
-	win.webContents.executeJavaScript('document.getElementById("Zagraj").disabled = true;');
 	if(fs.existsSync('./index.html')){
 		fs.unlinkSync('./index.html');
 	}
@@ -66,6 +66,10 @@ global.sharedObj.redownloadMods = function () {
     mkDir('./minecraft/.minecraft/mods');
     for(let i=0;i<modsArray.length;i++){
     	downloadFile('https://remethor.github.io/autoupdater/mods/'+modsArray[i], './minecraft/.minecraft/mods/'+modsArray[i]);
+    }
+    let libsArray = remethorSettings.javaLibraries;
+    for(let i=0;i<libsArray.length;i++){
+    	downloadFile('https://remethor.github.io/autoupdater/javaLibraries/'+libsArray[i], './minecraft/javaLibraries/'+libsArray[i]);
     }
 }
 global.sharedObj.resetConfig();
