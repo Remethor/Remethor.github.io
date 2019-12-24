@@ -25,8 +25,7 @@ if "%UUID%"=="" (
 )
 start "" /I /HIGH ./minecraft/runtime/64/jre1.8.0_211/bin/javaw.exe ^
 -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump "-Dos.name=Windows 10" -Dos.version=10.0 ^
--Xmx6
-G -Xms2G -Dminecraft.launcher.brand=remethor -Dminecraft.launcher.version=14.1.2_java -Duser.language=en -Duser.country=US ^
+-Xmx6G -Xms2G -Dminecraft.launcher.brand=remethor -Dminecraft.launcher.version=14.1.2_java -Duser.language=en -Duser.country=US ^
 -Djava.net.preferIPv4Stack=true -Xss1M -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M ^
 -Dfml.ignoreInvalidMinecraftCertificates=true ^
 -Dfml.ignorePatchDiscrepancies=true ^
