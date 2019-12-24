@@ -10,11 +10,12 @@
     </script>
   </head>
   <body>
-    <h1>[R] Remethor</h1>
-    Witaj w świecie remethor!<br />
-    Wersja launchera: <script>document.write(remote.getGlobal('sharedObj').version)</script><br /><br />
-    <input id="username" class="nicknameField" placeholder="Nick"><br />
-    <input type="button" value="Zagraj!" onclick="remote.getGlobal('sharedObj').startMinecraft();">
-    <input type="button" value='Napraw' onclick="remote.getGlobal('sharedObj').redownloadMods();">
+    <img src="logo.png" style="margin-left: auto; margin-right: auto; display: block;">
+    <script>document.write(remote.getGlobal('sharedObj').version)</script><br /><br />
+    <div id="bars"><input id="username" class="nicknameField" placeholder="Nick"></div><br />
+    <div id="buttons">
+      <input type="button" value="Zagraj" onclick="remote.getGlobal('sharedObj').startMinecraft();">
+      <input type="button" value='Napraw' onclick="remote.getGlobal('sharedObj').redownloadMods();">
+    </div>
   </body>
 </html>
