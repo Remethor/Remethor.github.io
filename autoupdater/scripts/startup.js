@@ -1,5 +1,10 @@
 console.log("Startup!");
-global.sharedObj = {version: null, startMinecraft: null, resetConfig: null, redownloadMods: null};
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+global.sharedObj = {version: "Error", nick: "Player"+Math.floor(Math.random()*100), uuid: "uuid"};
 global.sharedObj.version = "0.1.2r";
 global.sharedObj.resetConfig = function () {
 	deleteFolderRecursive("./minecraft/.minecraft/config/Embassy");
@@ -11,10 +16,19 @@ global.sharedObj.resetConfig = function () {
 	});
 	}
 }
-global.sharedObj.resetConfig();
 global.sharedObj.startMinecraft = function () {
 	exec('start '+process.cwd()+'/startMinecraft.bat');
 	process.exit(0);
+}
+global.sharedObj.redownloadIndex = function () {
+	if(fs.existsSync("./index.html")){
+		fs.unlinkSync("./index.html");
+	}
+	if(fs.existsSync("./style.css")){
+		fs.unlinkSync("./style.css");
+	}
+	downloadFile('https://remethor.github.io/autoupdater/index.html', './index.html');
+	downloadFile('https://remethor.github.io/autoupdater/style.css', './style.css');
 }
 global.sharedObj.redownloadMods = function () {
 	let modsArray = remethorSettings.mods;
@@ -24,3 +38,8 @@ global.sharedObj.redownloadMods = function () {
     	downloadFile('https://remethor.github.io/autoupdater/mods/'+modsArray[i], './minecraft/.minecraft/mods/'+modsArray[i]);
     }
 }
+
+
+
+global.sharedObj.resetConfig();
+global.sharedObj.redownloadIndex();
